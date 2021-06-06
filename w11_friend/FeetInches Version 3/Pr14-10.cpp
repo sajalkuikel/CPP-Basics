@@ -11,7 +11,7 @@ int main()
 
    // Create two FeetInches objects. The default arguments
    // for the constructor will be used.
-   FeetInches first, second;
+   FeetInches first;
 
    // Get a distance from the user.
    cout << "Enter a distance in feet and inches: ";
@@ -21,29 +21,46 @@ int main()
    first.setFeet(feet);
    first.setInches(inches);
 
+
+   //Demonstrating copy constructor
+   FeetInches third;
+
+   FeetInches second(first);
+   third = first.multiply(second);
+   
+
+   cout  << "Feet :" << third.getFeet() << endl;
+   cout  << "Inches :" << third.getInches() << endl;
+   
+
+
+
    // Get another distance.
-   cout << "Enter another distance in feet and inches: ";
-   cin >> feet >> inches;
+   // cout << "Enter another distance in feet and inches: ";
+   // cin >> feet >> inches;
 
-   // Store the distance in second.
-   second.setFeet(feet);
-   second.setInches(inches);
+   // // Store the distance in second.
+   // second.setFeet(feet);
+   // second.setInches(inches);
 
-if(first >= second){
-   cout <<  " First is greater than equal to  second " << endl;
-}
 
-if( first <= second ){
-   cout << " First is smaller than or equal to second " << endl;
-}
 
-if(first>=second && first<=second){
-   cout << "These are equal" <<endl;
-}
 
-if( first != second ){
-   cout << "These are not equal"  << endl;
-}
+// if(first >= second){
+//    cout <<  " First is greater than equal to  second " << endl;
+// }
+
+// if( first <= second ){
+//    cout << " First is smaller than or equal to second " << endl;
+// }
+
+// if(first>=second && first<=second){
+//    cout << "These are equal" <<endl;
+// }
+
+// if( first != second ){
+//    cout << "These are not equal"  << endl;
+// }
 
 
 

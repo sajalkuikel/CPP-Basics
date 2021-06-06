@@ -1,6 +1,8 @@
 // Specification file for the FeetInches class
 #ifndef FEETINCHES_H
 #define FEETINCHES_H
+#include <iostream>
+using namespace std;
 
 // The FeetInches class holds distances or measurements 
 // expressed in feet and inches.
@@ -18,6 +20,7 @@ public:
 		  inches = i;
 		  simplify(); }
 
+
    // Mutator functions
 	void setFeet(int f)
 		{ feet = f; }
@@ -29,6 +32,27 @@ public:
    // Accessor functions
 	int getFeet() const
 		{ return feet; }
+	FeetInches(const FeetInches &obj){
+		cout << "copy constructor";
+		
+		// feetPtr = new int ;
+		// inchesPtr = new int ;
+		
+		// *feetPtr =  *obj.feetPtr;
+		feet =  obj.feet;
+		inches =  obj.inches;
+
+		// *inchesPtr =  *obj.inchesPtr;
+
+	}
+	FeetInches multiply(FeetInches fi){
+		FeetInches temp;
+		temp.simplify();
+		temp.setFeet(feet * fi.feet);
+		temp.setInches(inches * fi.inches);
+		temp.simplify();
+		return temp;
+	}
 
 	int getInches() const
 		{ return inches; }

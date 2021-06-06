@@ -32,7 +32,7 @@ void FeetInches::simplify()
 
 FeetInches FeetInches::operator + (const FeetInches &right)
 {
-	FeetInches temp;
+	FeetInches temp;	
 
 	temp.inches = inches + right.inches;
 	temp.feet = feet + right.feet;
