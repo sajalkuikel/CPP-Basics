@@ -169,3 +169,4 @@ bool FeetInches::operator != (const FeetInches &right)
 
 	return status;
 }
+

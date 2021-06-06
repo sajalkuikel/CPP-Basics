@@ -11,26 +11,28 @@ int main()
 
    // Create two FeetInches objects. The default arguments
    // for the constructor will be used.
-   FeetInches first;
+   // FeetInches first;
 
-   // Get a distance from the user.
-   cout << "Enter a distance in feet and inches: ";
-   cin >> feet >> inches;
+   // // Get a distance from the user.
+   // cout << "Enter a distance in feet and inches: ";
+   // cin >> feet >> inches;
 
-   // Store the distance in first.
-   first.setFeet(feet);
-   first.setInches(inches);
+   // // Store the distance in first.
+   // first.setFeet(feet);
+   // first.setInches(inches);
+
+
 
 
    //Demonstrating copy constructor
-   FeetInches third;
+   // FeetInches third;
 
-   FeetInches second(first);
-   third = first.multiply(second);
+   // FeetInches second(first);
+   // third = first.multiply(second);
    
 
-   cout  << "Feet :" << third.getFeet() << endl;
-   cout  << "Inches :" << third.getInches() << endl;
+   // cout  << "Feet :" << third.getFeet() << endl;
+   // cout  << "Inches :" << third.getInches() << endl;
    
 
 
@@ -74,6 +76,29 @@ int main()
    //    cout << "first is greater than second.\n";
    // if (first < second)
    //    cout << "first is less than second.\n";
+
+
+
+   // to demonstrate tract area
+
+      FeetInches len;
+      FeetInches wid;
+
+      cout << "Enter a lendth of track in feet and inches: ";
+      cin >> feet >> inches;
+
+      len.setFeet(feet);
+      len.setInches(inches);
+
+      cout << "Enter a width of track in feet and inches: ";
+      cin >> feet >> inches;
+
+      wid.setFeet(feet);
+      wid.setInches(inches);
+
+
+      LandTrack land(  len, wid);
+      cout << "\n Area of the land is: " << land.area();
 
    return 0;
 }

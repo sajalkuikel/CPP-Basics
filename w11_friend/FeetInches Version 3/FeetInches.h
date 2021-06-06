@@ -33,7 +33,6 @@ public:
 	int getFeet() const
 		{ return feet; }
 	FeetInches(const FeetInches &obj){
-		cout << "copy constructor";
 		
 		// feetPtr = new int ;
 		// inchesPtr = new int ;
@@ -68,6 +67,32 @@ public:
 	bool operator <= (const FeetInches &);		// Overloaded ==
 	bool operator >= (const FeetInches &);		// Overloaded ==
 	bool operator != (const FeetInches &);		// Overloaded ==
+};
+
+class LandTrack{
+	
+	private : 
+		FeetInches length;
+		FeetInches width;
+
+	public :
+		LandTrack(FeetInches f1 , FeetInches f2){
+			length = f1;
+			width = f2;
+		}	
+
+		double area(){
+			double l =  length.getFeet();
+			l += length.getInches()/12.0;
+			
+			double w =  width.getFeet(); 
+			w += width.getInches()/12.0;
+			
+			cout << "Length: " << l  <<endl;
+			cout << "Width: " << w <<endl;
+			return l * w;
+		}
+	
 };
 
 #endif
