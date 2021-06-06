@@ -10,10 +10,12 @@ class Manager : public Student, public Employee
 {
     private:
         string title;
+        int due;
     public: 
         Manager(){
 
             title = "";
+            due=0;
         }
         void getData() {
             Employee::getData();
@@ -21,11 +23,15 @@ class Manager : public Student, public Employee
 
             cout << "Enter title : "; 
             cin >> title;
+
+            cout << "Enter due : "; 
+            cin >> due;
         }
         void putData(){
             Employee::putData();
             Student::putData();
             cout << "Title is: " << title <<endl;
+            cout << "Due is: " << due <<endl;
         }
 };
 
