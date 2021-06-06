@@ -1,5 +1,5 @@
-#ifndef PRODUCTION_WORKER_H
-#define PRODUCTION_WORKER_H
+#ifndef PRODUCTIONWORKER_H
+#define PRODUCTIONWORKER_H
 #include "Employee.h"
 using namespace std;
 #include <iostream>
@@ -18,8 +18,4 @@ public:
         "\n Hourly Pay: " << hourlyPay;
     };
 };
-
-
-
-
 #endif
