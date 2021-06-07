@@ -12,7 +12,10 @@ int main(){
     intList.insertNode(130);
 
     intList.deleteNode(130);
-    
+    intList.displayList();
+
+    intList.insertNodeOnPosition(0, 2);
+    cout << "After Insert On 2 :" <<endl;
     intList.displayList();
 
 

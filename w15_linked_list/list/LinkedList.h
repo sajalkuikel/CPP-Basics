@@ -22,7 +22,9 @@
     LinkedList()
         { head = NULL; }
     
-    
+    // LinkedList(const LinkedList &obj ){
+    //     // *ptr=  *obj.ptr; //copy the value
+    // }    
 
     // Destructor
     ~LinkedList();
@@ -32,6 +34,7 @@
     void insertNode(T);
     void deleteNode(T);
     void displayList() const;
+    void insertNodeOnPosition(T, int);
     };
 
 
@@ -222,4 +225,52 @@
         nodePtr = nextNode;
     }
     }
+template <class T>
+    void LinkedList<T>::insertNodeOnPosition(T newValue, int pos )
+    {
+    ListNode *newNode;             // A new node
+    ListNode *nodePtr;             // To traverse the list
+    ListNode *previousNode = NULL; // The previous node
+
+    // Allocate a new node and store newValue there.
+    newNode = new ListNode;
+    newNode->value = newValue;
+    
+    int tempPos =0 ;
+    nodePtr = head;
+    
+    if(head!=NULL){
+        while (nodePtr->next != NULL &&  tempPos !=pos)
+        {
+            previousNode = nodePtr;
+            nodePtr = nodePtr->next;
+            tempPos++;
+        }
+        if(pos= 0){
+            head = newNode;
+            newNode->next = nodePtr;
+        }
+        else if(nodePtr->next == NULL && pos == tempPos +1 ){
+            
+            nodePtr = nodePtr->next;
+            // Insert newNode as the last node.
+            nodePtr->next = newNode;
+        }
+        else if(pos >  tempPos +1) {
+            cout <<"Out of bound " << endl;
+        }
+        else{
+            previousNode->next = newNode;
+            newNode->next = nodePtr;
+            cout << "Node added at position" << pos <<endl;
+        }
+        
+    }
+    else{
+        head =  newNode;
+        newNode->next = NULL;
+        cout << "Added at head as list is empty! " <<  endl;
+        }
+    }
+
     #endif 
