@@ -150,4 +150,6 @@ int main(){
     stack2.pop(str1);
     cout  << "Demonstrating with string value: \n The  last element is : " << str1 << endl ;
 
+    system("pause");
+    return 0;
 }
