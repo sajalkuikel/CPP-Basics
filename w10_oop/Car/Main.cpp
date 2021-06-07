@@ -11,7 +11,8 @@ int main(){
     car.accelerate();
     cout <<  "\nSpeed of car after accelerating : " <<car.getSpeed();
     car.brake();
-    cout <<  "\nSpeed of car after braking : " <<car.getSpeed();
-
+    cout <<  "\nSpeed of car after braking : " <<car.getSpeed()<<endl;
+	
+	system("pause");
     return 0;
 }
