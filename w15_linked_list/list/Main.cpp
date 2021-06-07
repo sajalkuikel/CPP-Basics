@@ -22,6 +22,9 @@ int main(){
     cout << "After reverse" <<endl;
     intList.displayList();
 
+    cout << "Value at position 3 is: " << intList.searchValueOnIndex(3);
+
+
 
 
 }

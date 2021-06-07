@@ -36,6 +36,7 @@
     void displayList() const;
     void insertNodeOnPosition(T, int);
     void reverseList();
+    int searchValueOnIndex(int);
     };
 
 
@@ -297,5 +298,28 @@ template <class T>
         }
         head =  previousNode;
     }
+
+    template <class T>
+    int LinkedList<T>::searchValueOnIndex(int pos)
+    {
+    ListNode *nodePtr;             // To traverse the list
+    ListNode *previousNode = NULL; // The previous node
+
+    
+    int tempPos =0 ;
+    nodePtr = head;
+    
+        if(head!=NULL){
+            while (nodePtr->next != NULL &&  tempPos != pos)
+            {
+                previousNode = nodePtr;
+                nodePtr = nodePtr->next;
+                tempPos++;
+            
+            }
+            return nodePtr->value;
+        }
+    }
+
 
     #endif 
