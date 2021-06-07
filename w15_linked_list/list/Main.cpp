@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 #include "LinkedList.h"
 
 using namespace std;
@@ -17,6 +17,11 @@ int main(){
     intList.insertNodeOnPosition(0, 2);
     cout << "After Insert On 2 :" <<endl;
     intList.displayList();
+
+    intList.reverseList();
+    cout << "After reverse" <<endl;
+    intList.displayList();
+
 
 
 }

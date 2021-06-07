@@ -35,6 +35,7 @@
     void deleteNode(T);
     void displayList() const;
     void insertNodeOnPosition(T, int);
+    void reverseList();
     };
 
 
@@ -271,6 +272,30 @@ template <class T>
         newNode->next = NULL;
         cout << "Added at head as list is empty! " <<  endl;
         }
+    }
+
+    template <class T>
+    void LinkedList<T>:: reverseList(){
+        ListNode *nodePtr; // To move through the list
+        ListNode *previousNode = NULL; 
+        ListNode *next= NULL;
+
+        // Position nodePtr at the head of the list.
+        nodePtr = head;
+
+        // While nodePtr points to a node, traverse
+        // the list.
+        while (nodePtr)
+        {
+            // Display the value in this node.
+            // cout << nodePtr->value << endl;
+            next = nodePtr->next;
+            // Move to the next node.
+            nodePtr->next = previousNode;
+            previousNode=  nodePtr;
+            nodePtr= next;
+        }
+        head =  previousNode;
     }
 
     #endif 
