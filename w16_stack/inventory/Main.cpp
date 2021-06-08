@@ -12,13 +12,14 @@ int main(){
     string manufactDate;
     int lotNum;
     DynStack <Inventory> stack;    
-    
+    Inventory i1;
     int choice; 
     char repeat;
         
     do{
         cout  << "What do you want? \n"<< 
                 "Add a part to inventory (1) \n "<<
+                "Take a part from inventory (2) \n " << 
                 "Take a part from inventory (2) \n ";
         cin >> choice;
 
@@ -44,6 +45,14 @@ int main(){
         }
         else if (choice ==3) {
             cout << "Byeee";
+                while(!stack.isEmpty())
+            {
+                stack.pop(i1);
+                cout << "The values are: ";
+                cout << "Serial Number: " << i1.getSerialNum()
+                << "\nLot Number: " << i1.getLotNum()
+                << "\nManufactured Date: " << i1.getManufactDate()<< "\n";
+            }
             exit(0);
         }
         else{
